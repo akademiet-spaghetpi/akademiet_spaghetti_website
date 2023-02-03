@@ -1,0 +1,16 @@
+---
+let { text } = Astro.props;
+let { href } = Astro.props;
+---
+
+<div
+  class="h-full w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1"
+>
+  <div class="h-full w-full bg-white">
+    <a
+      class="block p-3 border-grad from-[#40c9ff] to-[#e81cff] rounded-lg hover:border-primary2 text-black transition-all ease-in-out"
+      href={href}
+      >{text}
+    </a>
+  </div>
+</div>

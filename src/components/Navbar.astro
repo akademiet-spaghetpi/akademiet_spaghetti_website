@@ -1,0 +1,86 @@
+---
+import ButtonGradient from "./ButtonGradient.astro";
+
+import "../css/navbar.css";
+---
+
+
+<section class="block py-2 font-inter text-black">
+  <nav class="md:container mx-auto px-10">
+    <div class="flex items-center justify-between">
+      <div class="flex-col mx-auto lg:flex lg:mx-0">
+        <a href="https://lucasodev.tk">
+          <div class="mx-auto w-80 pt2 sm:mx-0">
+            <img src="logo.svg" alt="">
+          </div>
+        </a>
+        <ul class="menu font-semibold text-black">
+          <li>
+            <a href="https://lucasodev.tk">
+              <div class="mx-auto w-80 pt2 sm:mx-0 flex justify-center my-4">
+                <img src="logo.svg" alt="">
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="hover:font-bold text-xl menuItem" href=""
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a class="hover:font-bold text-xl menuItem" href=""
+              >Social Media</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:font-bold text-xl menuItem"
+              href="https://blog.lucasodev.tk">Blog</a
+            >
+          </li>
+        </ul>
+        <div>
+        <button
+          class="flex mx-auto text-4xl justify-center pt-3 lg:hidden text-white hamburger"
+        >
+          <i class="menuIcon"
+            ><img src="hamburgerIcon.svg" /></i
+          >
+          <i class="closeIcon"
+            ><img src="closeIcon.svg" /></i
+          >
+        </button>
+        </div>
+      </div>
+      <div class="hidden lg:flex space-x-6 text-primary1 font-light text-md">
+        <a class="hover:text-primary hover:font-bold" href="">About Us</a>
+        <a class="hover:text-primary hover:font-bold" href="">Social Media</a>
+        <a class="hover:text-primary hover:font-bold" href="https://blog.lucasodev.tk">Blog</a>
+      </div>
+
+      <div class="hidden lg:block m-3 w-40 text-center">
+        <ButtonGradient text="Donate" href="https://www.spleis.no/project/306113" />
+      </div>
+    </div>
+  </nav>
+</section>
+
+<script>
+  const menu = document.querySelector(".menu");
+  const menuItems = document.querySelectorAll(".menuItem");
+  const hamburger = document.querySelector(".hamburger");
+  const closeIcon = document.querySelector(".closeIcon");
+  const menuIcon = document.querySelector(".menuIcon");
+  function toggleMenu() {
+    if (menu.classList.contains("showMenu")) {
+      menu.classList.remove("showMenu");
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
+    } else {
+      menu.classList.add("showMenu");
+      closeIcon.style.display = "block";
+      menuIcon.style.display = "none";
+    }
+  }
+  hamburger.addEventListener("click", toggleMenu);
+</script>
