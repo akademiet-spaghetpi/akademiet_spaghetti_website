@@ -5,7 +5,7 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'ard-spaghetti-blog',
+  title: 'Akademiet Spaghetti Admin Portal',
 
   projectId: 'uhwu6h0e',
   dataset: 'production',
