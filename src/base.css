@@ -9,4 +9,13 @@
     background: linear-gradient(to right, #c084fc, #db2777);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-clip: text;
 }
+
+.hero {
+    background-image: url("./hero_illustration.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 30vh;
+    background-size: 40vh;
+} 
