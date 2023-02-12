@@ -1,0 +1,25 @@
+---
+import SubLayout from "../../layouts/SubLayout.astro";
+
+import { getAllPosts } from "../../lib/api.js";
+import { getSanityImage } from "../../lib/getSanityImage";
+
+import PortableText from "../../components/PortableText.astro";
+
+
+export async function getStaticPaths() {
+  const allBlogPosts = await getAllPosts();
+  return allBlogPosts.map(post => ({ params: { slug: post.slug.current }, props: { post } }));
+}
+
+const { post } = Astro.props;
+import "./slug.css"
+---
+
+<SubLayout title={post.title}>
+  <div class="blog-page container mx-auto p-4">
+    <p>Updated at: {new Date (post._updatedAt).toLocaleDateString()}</p>
+    <img class="w-full max-h-[50vh] object-cover py-3" src={getSanityImage(post.mainImage).url()} alt="">
+    <PortableText portableText={post.body} />
+  </div>
+</SubLayout>

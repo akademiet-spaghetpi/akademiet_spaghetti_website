@@ -1,0 +1,13 @@
+p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.blog-page a {
+    color: #F4E04D;
+    text-decoration: underline;
+}
+
+.blog-page p strong {
+    font-size: 1.3rem;
+}

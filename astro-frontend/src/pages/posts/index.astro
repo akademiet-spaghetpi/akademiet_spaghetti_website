@@ -1,0 +1,27 @@
+---
+import SubLayout from "../../layouts/SubLayout.astro";
+
+import { getSanityImage } from "../../lib/getSanityImage";
+
+import { getAllPosts } from "../../lib/api";
+
+const posts = await getAllPosts();
+---
+
+
+<SubLayout title="Our Blog">
+    <div class="max-w-md mx-auto">
+        <ul class="flex justify-center m-4 text-black">
+          {
+            posts.map((post) => (
+              <li class="flex flex-col w-[200rem] border-2 rounded-lg hover:border-finePink transition-all ease-in-out m-5">
+                <a class="m-5" href={`/posts/${post.slug.current}`}>
+                  <img class="mb-4 rounded-lg" src={getSanityImage(post.mainImage).url()} alt="" />
+                  {post.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+</SubLayout>
